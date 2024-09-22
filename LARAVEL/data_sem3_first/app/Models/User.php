@@ -45,7 +45,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            // 'password' => 'hashed', // this will stope the password from being hashed
+            'password' => 'hashed', // this will stope the password from being hashed
         ];
     }
 }

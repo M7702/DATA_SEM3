@@ -32,6 +32,17 @@ Route::post('/insert',[usercontroller::class, 'insert']) -> name('insertdata'); 
 
 
 
+//userdelete
+Route::get('/delete',[usercontroller::class,'delete'])->name('delete'); // call delete function from usercontroller class and give name to route
+
+
+
+//useredit
+
+Route::get('/edit',[usercontroller::class,'edit'])->name('edit'); // call edit function from usercontroller class and give name to route
+Route::post('/edit-user',[usercontroller::class,'updateuser'])->name('editdata'); // call updateuser function from usercontroller class and give name to route
+
+
 
 
 
