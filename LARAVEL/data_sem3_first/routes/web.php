@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\usercontroller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PhotoController;
+
+
+use App\Models\product;
 
 // ******
 // Route::get('url_name',function(){
@@ -46,3 +50,5 @@ Route::post('/edit-user',[usercontroller::class,'updateuser'])->name('editdata')
 
 
 
+
+Route::resource('product',PhotoController::class);
