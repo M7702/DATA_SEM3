@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+
 
 class PhotoController extends Controller
 {
@@ -11,7 +13,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        // $productdata = Product::all();
         $productdata = product::all();
         return view('productlisting',['products'=>$productdata]);
     }

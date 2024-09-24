@@ -5,7 +5,7 @@
         <th>view</th>
     </tr>
 
-    @foreach ($product as $user)
+    @foreach ($productdata as $key => $user)
     <tr>
         <td>{{$user ->name}}</td>
         <td>{{$user ->quantity}}</td>
