@@ -6,11 +6,11 @@
     </tr>
 
 
-    @foreach ($products as  $product)
+    @foreach ($products as  $user)
 
     <tr>
-        <td>{{$product -> name}}</td>
-        <td>{{$product -> quantity}}</td>
+        <td>{{$user -> name}}</td>
+        <td>{{$user -> quantity}}</td>
     </tr>
     @endforeach
 
