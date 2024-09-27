@@ -52,3 +52,4 @@ Route::post('/edit-user',[usercontroller::class,'updateuser'])->name('editdata')
 
 
 Route::resource('product',PhotoController::class);
+Route::get('/productlisting',[PhotoController::class,'index']) -> name('listing');

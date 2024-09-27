@@ -5,9 +5,11 @@
         <th>view</th>
     </tr>
 
-    @foreach ($product as $user)
+    @foreach ($products as  $product)
     <tr>
-        <td>{{$user ->name}}</td>
-        <td>{{$user ->quantity}}</td>
+        <td>{{$product -> name}}</td>
+        <td>{{$product -> quantity}}</td>
     </tr>
+    @endforeach
+
 </table>
