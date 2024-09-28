@@ -48,8 +48,18 @@ Route::post('/edit-user',[usercontroller::class,'updateuser'])->name('editdata')
 
 
 
-
+// product listing
 
 
 Route::resource('product',PhotoController::class);
 Route::get('/productlisting',[PhotoController::class,'index']) -> name('listing');
+
+
+
+// product insert
+Route::get('/insertproduct', function () {
+    return view('productinsert');
+});
+
+
+Route::post('/productinsert',[PhotoController::class,'store']) -> name('product_store');

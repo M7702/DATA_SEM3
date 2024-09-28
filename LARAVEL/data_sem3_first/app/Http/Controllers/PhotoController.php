@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
-
-
+use Symfony\Component\HttpKernel\Debug\VirtualRequestStack;
 
 class PhotoController extends Controller
 {
@@ -32,10 +31,19 @@ class PhotoController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * 
      */
+    
     public function store(Request $request)
     {
         //
+        $productdata = product::create([
+            'name' => $request -> product_name,
+            'quantity' => $request -> product_quantity
+        ]);
+        $productdata = Product::all();
+
+        return view('productlisting',['products' => $productdata]);
     }
 
     /**
