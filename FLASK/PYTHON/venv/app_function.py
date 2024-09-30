@@ -29,7 +29,11 @@ def vw_display():
 
 
     reverse = text [::-1]
-    return render_template('OddAns.html',ans = reverse)
+    if (reverse == text):
+        flag = "Palindrone string"
+    else:
+        flag = "Not Palindrone string"
+    return render_template('OddAns.html',ans = reverse,text = text, flag = flag)
 
 
 
