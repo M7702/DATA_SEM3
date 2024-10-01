@@ -11,6 +11,9 @@
     <tr>
         <td>{{$user -> name}}</td>
         <td>{{$user -> quantity}}</td>
+        <td>
+            <a href="{{ route('product.show',$user-> id)}}"> View</a>
+        </td>
     </tr>
     @endforeach
 

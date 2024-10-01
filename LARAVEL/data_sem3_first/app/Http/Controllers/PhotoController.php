@@ -49,9 +49,12 @@ class PhotoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
         //
+        $productdata = Product::where('id',$id)->first();
+        
+        return view('product_show',['product_show' => $productdata]);
     }
 
     /**
