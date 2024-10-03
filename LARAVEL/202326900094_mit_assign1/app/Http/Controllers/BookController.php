@@ -49,32 +49,62 @@ public function store(Request $request)
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        // Find the book by ID
+        $book = Book::findOrFail($id);
+
+        // Return the view to display the book details
+        return view('books.show', compact('book'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function edit($id)
+{
+    // Find the book by ID
+    $book = Book::findOrFail($id);
+
+    // Return the view with the edit form
+    return view('books.edit', compact('book'));
+}
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    public function update(Request $request, $id)
+{
+    // Validate the incoming data
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'author' => 'required|string|max:255',
+        'year_published' => 'required|integer',
+        'description' => 'nullable|string',
+    ]);
+
+    // Find the book and update its details
+    $book = Book::findOrFail($id);
+    $book->update($validatedData);
+
+    // Redirect back to the index with a success message
+    return redirect()->route('books.index')->with('success', 'Book updated successfully!');
+}
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+    public function destroy($id)
+{
+    // Find the book by ID and delete it
+    $book = Book::findOrFail($id);
+    $book->delete();
+
+    // Redirect back to the index with a success message
+    return redirect()->route('books.index')->with('success', 'Book deleted successfully!');
+}
+
 }
