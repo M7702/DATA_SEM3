@@ -13,13 +13,13 @@
             <!-- Using 'for' loop to iterate through items -->
              <table border="1">
                 <tr>
-                 {% for item in value %}
+                 {% for key,value in value.items() %}
                  <tr>
                     <td>
-                       {{ item }}
+                       {{ key }}
                     </td>
                     <td>
-                        {{ans[value.index(item)]}}
+                        {{value}}
                     </td>
 
                  </tr>

@@ -10,13 +10,12 @@ def vw_index():
 
 @app.route('/display',methods=['GET','POST'])
 def vw_display():
+    
     no = int(request.form['txtdata'])
-    no_list = []
-    sqr_list = []
+    sqr_disc={}
     for i in range(1, no + 1):
-        no_list.append(i)
-        sqr_list.append(i**2)
-    return render_template('forresult.html',value = no_list,ans = sqr_list)
+        sqr_disc[i] = i**2
+    return render_template('discresult.html',value = sqr_disc)
 
 
 
