@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator; //for inbuilt message for validation
+use Illuminate\Support\Facades\Log; // for logging errors
 
 class userController extends Controller
 {
@@ -97,7 +98,7 @@ public function edit(Request $request){
       $select = User::find($edit_id);
 
       if (!$select) {
-        \Log::error('Error in edit method-user not found');
+        Log::error('Error in edit method-user not found');
           return redirect()->back()->withErrors('User not found.');
       }
 
@@ -105,7 +106,7 @@ public function edit(Request $request){
 
   } catch (\Exception $e) {
       // Log the exception for further investigation
-      \Log::error('Error in edit method: ' . $e->getMessage());
+      Log::error('Error in edit method: ' . $e->getMessage());
 
       // Redirect to a safe page with an error message
       return redirect()->back()->withErrors('An unexpected error occurred.');

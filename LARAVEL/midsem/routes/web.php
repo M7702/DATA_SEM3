@@ -34,6 +34,7 @@ Route::get('/delete',[userController::class,'delete'])->name('delete');
 // useredit
 Route::get('/edit',[userController::class,'edit'])->name('edit');
 Route::post('/edit-user',[userController::class,'updateuser'])->name('editdata');
+
 //productcontroller
 Route::get('/productview',[productcontroller::class,'index']);
 Route::get('/productinsert',[productcontroller::class,'create']);

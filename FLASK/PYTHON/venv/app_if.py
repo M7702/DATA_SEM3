@@ -24,9 +24,5 @@ def vw_display():
     # return render_template('postresult.html',value = data)
 
 
-
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
