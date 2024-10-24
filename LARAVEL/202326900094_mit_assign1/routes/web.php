@@ -17,3 +17,11 @@ Route::get('/hello/{username}', function ($username) {
 
 
 Route::resource('books', BookController::class);
+
+
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+
+Route::resource('products', ProductController::class);
+Route::resource('orders', OrderController::class);
+
