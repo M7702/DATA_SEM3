@@ -49,3 +49,8 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('pr
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('product.update');
 
 Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+
+
+Route::get('/xyz', function(){
+    return view('layouts.masterlayout');
+});
