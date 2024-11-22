@@ -63,3 +63,8 @@ Route::get('/insertproduct', function () {
 
 
 Route::post('/productinsert',[PhotoController::class,'store']) -> name('product_store');
+
+
+Route::get('/xyz',function(){
+    return view('layouts.aboutus');
+});
