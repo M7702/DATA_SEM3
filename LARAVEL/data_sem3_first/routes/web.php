@@ -3,6 +3,7 @@
 use App\Http\Controllers\usercontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoController;
+use Illuminate\Support\Facades\Auth;
 
 
 use App\Models\product;
@@ -68,3 +69,7 @@ Route::post('/productinsert',[PhotoController::class,'store']) -> name('product_
 Route::get('/xyz',function(){
     return view('layouts.aboutus');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

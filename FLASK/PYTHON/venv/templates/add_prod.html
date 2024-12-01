@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{{ url_for('vw_addprod') }}" method="post">
+        <table>
+            <tr>
+                <td><label for="prod_id">Enter product id</label>
+                </td>
+                <td><input type="text" name="prod_id" id=""><br></td>
+              </tr> 
+          <tr>
+            <td><label for="prod_name">Enter product name</label>
+            </td>
+            <td><input type="text" name="prod_name" id=""><br></td>
+          </tr>
+          <tr>
+            <td><label for="prod_price">Enter product price</label>
+            </td>
+            <td><input type="text" name="prod_price" id=""><br></td>
+          </tr>
+          <tr>
+            <td><label for="prod_qty">Enter product quantity</label>
+            </td>
+            <td><input type="text" name="prod_qty" id=""><br></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="Submit"></td>
+          </tr>
+    
+        </table>
+      </form>
+</body>
+</html>
