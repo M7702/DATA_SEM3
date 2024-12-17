@@ -80,6 +80,7 @@ class userController extends Controller
       return redirect()->route('userlisting');
       
     }
+    
 //     public function edit(Request $request){
 //       $edit_id = $request->edit_id;
 //       // dd($edit_id);

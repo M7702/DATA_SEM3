@@ -6,6 +6,7 @@
     <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
+        
 
         <div class="form-group">
             <label for="name">Product Name</label>
