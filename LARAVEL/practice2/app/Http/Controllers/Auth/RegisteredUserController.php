@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\Student;
 
 class RegisteredUserController extends Controller
 {
@@ -33,21 +34,19 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'phone' => ['required'],
-            
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->phone,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+        $students = Student::all();
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('dashboard',['students'=>$students],absolute: false));
     }
 }
